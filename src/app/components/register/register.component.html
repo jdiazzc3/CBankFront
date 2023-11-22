@@ -1,0 +1,31 @@
+
+<body>
+    <div class="center">
+        <h1>Registro</h1>
+        <form id="login-form" (ngSubmit)="guardar()" [formGroup]="usuarioForm" >
+            <div class="txt_field">
+                <input type="text" formControlName="nombre">
+                <span></span>
+                <label>Nombre</label>
+            </div>
+            <div class="txt_field">
+                <input type="text" formControlName="apellido" >
+                <span></span>
+                <label>Apellidos</label>
+            </div>
+            <div class="txt_field">
+                <input type="text" formControlName="cedula" >
+                <span></span>
+                <label>Cedula</label>
+            </div>
+            <div class="txt_field">
+                <input type="text" formControlName="correo">
+                <span></span>
+                <label>Correo</label>
+            </div>
+            <input type="submit" value="Siguiente">
+        </form>
+            <div class="signup_link">
+            </div>
+    </div>
+</body>

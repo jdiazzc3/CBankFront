@@ -1,0 +1,20 @@
+<body>
+<div class="center">
+        <h1>Registro</h1>
+        <form id="login-form" (ngSubmit)="guardarCuenta()" [formGroup]="cuentaForm" >
+            <div class="txt_field">
+                <input type="text" formControlName="telefono">
+                <span></span>
+                <label>Teléfono</label>
+            </div>
+            <div class="txt_field">
+                <input type="number" formControlName="pin" >
+                <span></span>
+                <label>Contraseña</label>
+            </div>
+            <input type="submit" value="Registrate">
+        </form>
+            <div class="signup_link">
+            </div>
+    </div>
+</body>
