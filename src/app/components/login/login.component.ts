@@ -9,55 +9,36 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements  OnInit{
+export class LoginComponent {
 
-  private API_SERVER = "http://localhost:8080/cuenta/guardarCuenta";
+  private API_SERVER = "http://localhost:8080/cuenta/obtenerIdPorTelefono";
 
-  cuentaForm!: FormGroup;
+  loginForm!: FormGroup;
+  idCuenta: number | null = null; 
 
   constructor(
     public fb: FormBuilder,
     private http: HttpClient,
-    private route: ActivatedRoute,
-    ){
-      this.cuentaForm = this.fb.group({
-        telefono : ['', [Validators.required, Validators.minLength(3)]],
-        pin : ['', [Validators.required, Validators.minLength(3)]],
-       });
-  }
-
-  ngOnInit(): void {
-    this.route.params.subscribe(params => {
-      const userId = params['userId'];
-      console.log('ID del usuario:', userId);
-  
-      
+    private router: Router,
+  ) {
+    this.loginForm = this.fb.group({
+      telefono: ['', [Validators.required, Validators.minLength(10)]],
     });
   }
 
-  guardarCuenta() {  
-    this.route.params.subscribe(params => {
-      const userId = parseInt(params['userId'], 10); // Convierte el userId a un número entero
-      console.log(this.cuentaForm.value);
-      
-      const cuentaData = {
-        ...this.cuentaForm.value,
-        usuarioId: userId,
-        saldo: 0
-      };
-  
-      console.log(cuentaData);
-  
-      this.saveAccount(cuentaData).subscribe(resp => {
-        alert('Usuario creado correctamente');
-        this.cuentaForm.reset();
-      });
-    });
+  iniciarSesion() {
+    const telefono = this.loginForm.get('telefono')?.value;
+    const api = `${this.API_SERVER}/${telefono}`
+    this.http.get<any>(api).subscribe(
+      resp => {
+        this.idCuenta = resp;
+        console.log(this.idCuenta); 
+        this.router.navigate(['/account-auth', this.idCuenta]);
+      },
+      (error) => {
+        alert('El número de teléfono no está asociado a ninguna cuenta');
+      }
+    );
   }
-  
-    saveAccount(cuenta: any){
-      return this.http.post<any>(this.API_SERVER, cuenta);
-    }
-
 
 }

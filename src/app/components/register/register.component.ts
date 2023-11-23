@@ -33,10 +33,8 @@ export class RegisterComponent {
       console.log(this.usuarioForm.value);
       this.saveUser(this.usuarioForm.value).subscribe(resp => {
         const userId = resp.id;
-        console.log(userId);
-        alert('Usuario creado correctamente');
         this.usuarioForm.reset();
-        this.router.navigate(['/login', userId]);
+        this.router.navigate(['/account-register', userId]);
       });
    
   }

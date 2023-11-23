@@ -1,0 +1,20 @@
+<body>
+    <div class="center">
+            <h1>Iniciar Sesión</h1>
+            <form id="login-form" (ngSubmit)="autenticarCuenta()" [formGroup]="authForm">
+                <!-- <div class="txt_field">
+                    <input type="text">
+                    <span></span>
+                    <label>Teléfono</label>
+                </div> -->
+                <div class="txt_field">
+                    <input type="number" formControlName="pin" >
+                    <span></span>
+                    <label>Contraseña</label>
+                </div>
+                <input type="submit" value="Entrar">
+            </form>
+                <div class="signup_link">
+                </div>
+        </div>
+</body>

@@ -9,13 +9,23 @@ import { RegisterComponent } from './components/register/register.component';
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AccountRegisterComponent } from './components/account-register/account-register.component';
+import { AccountAuthComponent } from './components/account-auth/account-auth.component';
+import { SideNavComponent } from './components/side-nav/side-nav.component';
+import { BodyComponent } from './components/body/body.component';
+import { MainComponent } from './components/main/main.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    UserDashboardComponent
+    UserDashboardComponent,
+    AccountRegisterComponent,
+    AccountAuthComponent,
+    SideNavComponent,
+    BodyComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
