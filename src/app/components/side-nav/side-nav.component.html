@@ -3,7 +3,7 @@
       <i class="fa-solid fa-user" (click)="toggleCollapse()" id="logo-icon"></i>
       <!-- <img class="logo"  alt="Profile Photo" (click)="toggleCollapse()"> -->
       <div class="logo-text" *ngIf="collapsed">
-        <span class="logo-text-bold">Hola, Nombre</span>
+        <span class="logo-text-bold">Hola, {{nombre}}</span>
       </div>
       <button class="btn" *ngIf="collapsed" (click)="closeSidenav()">
         <i class="fa-solid fa-xmark"></i>

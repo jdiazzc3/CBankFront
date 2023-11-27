@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -8,7 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './account-auth.component.html',
   styleUrls: ['./account-auth.component.css']
 })
-export class AccountAuthComponent {
+export class AccountAuthComponent implements OnInit {
 
   private API_SERVER = "http://localhost:8080/cuenta/verificarCuentaPorIdYPin";
 
@@ -25,6 +25,10 @@ export class AccountAuthComponent {
     });
   }
 
+  ngOnInit(): void {
+    localStorage.setItem('loggedIn', 'false');
+  }
+
   autenticarCuenta() {
     this.route.params.subscribe(params => {
       const accountId = parseInt(params['accountId'], 10); // Convierte el userId a un número entero
@@ -38,6 +42,7 @@ export class AccountAuthComponent {
 
       this.authAccount(authData).subscribe(resp => {
         alert('Usuario autenticado correctamente');
+        localStorage.setItem('loggedIn', 'true');
         this.authForm.reset();
         this.router.navigate(['/user-dashboard']);
       },

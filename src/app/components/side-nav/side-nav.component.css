@@ -1,7 +1,7 @@
 @import "~@fortawesome/fontawesome-free/css/all.css";
 
 .sidenav {
-    background: #5c136e;
+    background: #DB0083;
     transition: all .5s ease;
     position: fixed;
     z-index: 1;
@@ -22,7 +22,7 @@
 
 .sidenav .logo-container #logo-icon {
     background: #fff;
-    color: #5c136e;
+    color: #DB0083;
     text-align: center;
     width: 3rem;
     min-width: 3rem;
@@ -117,7 +117,7 @@
 }
 
 .sidenav-nav .sidenav-nav-item .sidenav-nav-link:hover {
-    color: #5c136e;
+    color: #DB0083;
     background: #fff;
 }
 
@@ -126,14 +126,14 @@
 }
 
 .active .sidenav-link-icon, .active .sidenav-link-text {
-    color: #5c136e;
+    color: #DB0083;
 }
 
 .sidenav-footer {
     position: absolute; 
     bottom: 0; 
     margin: 0 0 0.5rem 0;
-    background-color: #5c136e;
+    background-color: #DB0083;
     display: flex;
     align-items: center;
     padding: 0.938rem 0.938rem 0 0.938rem;
@@ -168,17 +168,17 @@
   }
   
   .sidenav-footer .btn:hover {
-    color: #5c136e;
+    color: #DB0083;
     background-color: #fff;
   }
 
   #logout {
     /* margin-top: 1rem; */
-    color: #5c136e;
+    color: #DB0083;
   }
 
   #logout-text {
-    color: #5c136e;
+    color: #DB0083;
     font-weight: 500;
     font-size: 16px;
   }

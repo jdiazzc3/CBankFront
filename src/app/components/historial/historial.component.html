@@ -1,0 +1,17 @@
+<table>
+    <thead>
+      <tr>
+        <th>Fecha</th>
+        <th>Tipo</th>
+        <th>Monto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transferencia of historial">
+        <td>{{ transferencia.fecha }}</td>
+        <td>{{ obtenerTipoTransferencia(transferencia) }}</td>
+        <td>{{ transferencia.monto | currency:'USD':'symbol':'1.2-2' }}</td>
+      </tr>
+    </tbody>
+  </table>
+  

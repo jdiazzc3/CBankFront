@@ -14,6 +14,8 @@ import { AccountAuthComponent } from './components/account-auth/account-auth.com
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { BodyComponent } from './components/body/body.component';
 import { MainComponent } from './components/main/main.component';
+import { TransactionsComponent } from './components/transactions/transactions.component';
+import { HistorialComponent } from './components/historial/historial.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { MainComponent } from './components/main/main.component';
     AccountAuthComponent,
     SideNavComponent,
     BodyComponent,
-    MainComponent
+    MainComponent,
+    TransactionsComponent,
+    HistorialComponent
   ],
   imports: [
     BrowserModule,

@@ -33,6 +33,7 @@ export class LoginComponent {
       resp => {
         this.idCuenta = resp;
         console.log(this.idCuenta); 
+        localStorage.setItem('idCuenta', this.idCuenta!.toString());
         this.router.navigate(['/account-auth', this.idCuenta]);
       },
       (error) => {

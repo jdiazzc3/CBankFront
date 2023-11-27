@@ -4,6 +4,16 @@ export const navbarData = [
         icon: 'fa-solid fa-house',
         label: 'Dashboard'
     },
+    {
+        routeLink: 'transactions',
+        icon: 'fa-solid fa-money-bill-wave',
+        label: 'Transactions'
+    },
+    {
+        routeLink: 'historial',
+        icon: 'fa-solid fa-history',
+        label: 'History'
+    },
     // {
     //     routeLink: 'recipes',
     //     icon: 'fa-solid fa-plate-wheat',

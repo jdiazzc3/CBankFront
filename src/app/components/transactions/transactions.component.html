@@ -1,0 +1,21 @@
+
+<body>
+    <div class="center">
+        <h1>Transferencia</h1>
+        <form id="login-form" (ngSubmit)="transferir()" [formGroup]="transactionForm" >
+            <div class="txt_field">
+                <input type="text" formControlName="telefono">
+                <span></span>
+                <label>Teléfono</label>
+            </div>
+            <div class="txt_field">
+                <input type="number" formControlName="monto" >
+                <span></span>
+                <label>Monto</label>
+            </div>
+            <input type="submit" >
+        </form>
+            <div class="signup_link">
+            </div>
+    </div>
+</body>
